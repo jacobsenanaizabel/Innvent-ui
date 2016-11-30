@@ -20,38 +20,39 @@
 <div class="section-colored">
 
     <div class="container">
-
+        <div class="row">    
+        <div class="col-lg-6 col-md-6 col-sm-6">
+        <button type="button" class="btn btn-primary btn-md"  ng-repeat="currencie in currenciesArray" ng-click="changeInput(currencie)" style="1%">{{currencie}}</button>
+        </div>
+        </div>
         <div class="row">
+            
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2>Cotação de hoje do dolar para :</h2>
-                <ul>
-                    <li>Euro</li>
-                    <li>Real</li>
-                    <li>Peso Argentino</li>
-                </ul>
+                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>              
+                <h2>Selecione uma Cotação de moeda </h2>               
+                <p>                 
+                <label ng-model="currenciesChoose.tes">Moeda escolhida : {{currenciesChoose.tes}}</label>
+                  
+                </p>              
             </div>
         </div>
     </div>
 </div>
 <div class="section">
-
-    <div class="container">
-
+    <div class="container">        
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <div id="containerUSD" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <h2>Cotação de hoje do dolar para :</h2>
+                <ul>
+                    <li>Cotação do Dolar para o Euro</li>
+                    <li>Cotação do Dolar para o Real</li>
+                    <li>Cotação do Dolar para o Peso Argentino</li>
+                </ul>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2>Cotação de uma semana atrás:</h2>
-                <ul>
-                    <li>Realk</li>
-                    <li>Dolar</li>
-                    <li>Euro</li>
-                    <li>Outras Moedas</li>
-                </ul>
+                <div id="containerDay" style="min-width: 310px; height: 400px; margin: 0 auto"></div>              
             </div>
         </div>
     </div>
