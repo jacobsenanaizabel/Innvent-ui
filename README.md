@@ -2,6 +2,10 @@
 Repositorio  de cotação financeira 
 
 
+### Heroku
+[Heroku clicando aqui](https://fathomless-beyond-32174.herokuapp.com/#/) 
+
+
 ### Configuração do ambiente de desenvolvimento
 
 * Instalar o [node js](http://nodejs.org/) versão v6.9.1 (ultima versão)
