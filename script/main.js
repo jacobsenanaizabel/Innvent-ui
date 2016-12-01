@@ -47,7 +47,7 @@ app.controller('PageCtrl', function ( $scope, $location, $http, pageService) {
 
     $http({
     method : "GET",
-    url : "http://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&currencies=EUR,BRL,ARS&source=USD&format=1"
+    url : "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&currencies=EUR,BRL,ARS&source=USD&format=1"
     }).then(function mySucces(response) {
         $scope.currencies = response.data;
 
@@ -82,12 +82,12 @@ app.controller('PageCtrl', function ( $scope, $location, $http, pageService) {
     var convertido = conversao(val);  
     $http({
     method : "GET",
-    url : "http://localhost:1337/api/currencies/exchange/"+convertido
+    url : "https://localhost:1337/api/currencies/exchange/"+convertido
     }).then(function mySucces(response) {
-        console.log("http://localhost:1337/api/currencies/exchange/"+convertido)
+        console.log("https://localhost:1337/api/currencies/exchange/"+convertido)
                
         if(!response.data.success){
-            var get = $http.get('http://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&currencies='+convertido).then(function(result) {
+            var get = $http.get('https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&currencies='+convertido).then(function(result) {
                 $scope.cambioCurrencies = result.data;
                 getDayliCurrency($scope.cambioCurrencies, val);
             });
@@ -96,7 +96,7 @@ app.controller('PageCtrl', function ( $scope, $location, $http, pageService) {
             console.log($scope.cambioCurrencies)
         }
     })["catch"](function(result) {
-        var get = $http.get('http://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&currencies='+convertido).then(function(result) {
+        var get = $http.get('https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&currencies='+convertido).then(function(result) {
             $scope.cambioCurrencies = result.data;
             getDayliCurrency($scope.cambioCurrencies, val);
         });
